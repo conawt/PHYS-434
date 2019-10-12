@@ -65,6 +65,10 @@ disp(b3);
 % the appearance of a negative sign and we may safely discard it if speaking in 
 % terms of magnitude.
 % 
+% %%(jeffiang another way to think about the sigma is negative is to think as the area
+% above the curve so if you make the sigma to be positive all you need is to use norminv(1-x))
+% %%exaple code from jeff
+bex = norminv(1-2.86652E-7)
 % % Section 2: Exploring the lognormal distribution.
 
 clc; clear; close all;
@@ -109,8 +113,12 @@ disp(c1);
 % The Poisson distribution is the limiting case of the Binomial distribution 
 % where the number of trials goes to infinity. It gives the probability that a 
 % certain number of events within a fixed interval may occur.
+% %(here I use stairs graph, I think stairs graph is easyer ti show to descrete since there will be gap between two number)
 
 clc; close all; clear;
+% %%exaple code from jeff
+hpoissonex = random('Poisson',5,[1,20]);
+histogram(hpoissonex,'DisplayStyle',"stairs",'LineWidth',2);
 expected1 = 1;
 expected2 = 4;
 expected3 = 8;
